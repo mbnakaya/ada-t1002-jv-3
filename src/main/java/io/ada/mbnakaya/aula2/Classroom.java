@@ -79,6 +79,12 @@ public class Classroom {
     private static void showPeriodDurationAndInstant() {}
 
     /**
+     * Utiliza o método ZoneId.getRules().isDaylightSavings(ZonedDateTime.toInstant()) para verificar se o horário
+     * foi alterado devido ao horário de verão.
+     */
+    private static void showDaylightSavings() {}
+
+    /**
      * Challenge Two: use o stdout para imprimir a duração de execução do método abaixo.
      */
     private static void showChallengeTwo() {
