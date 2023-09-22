@@ -1,4 +1,4 @@
-package main.java.io.ada.mbnakaya.aula2;
+package io.ada.mbnakaya.aula2;
 
 import java.time.*;
 import java.time.format.DateTimeFormatter;
