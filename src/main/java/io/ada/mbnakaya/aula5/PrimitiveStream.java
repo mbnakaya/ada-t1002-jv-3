@@ -1,5 +1,7 @@
 package io.ada.mbnakaya.aula5;
 
+import java.util.function.Function;
+import java.util.function.IntToLongFunction;
 import java.util.stream.DoubleStream;
 import java.util.stream.IntStream;
 import java.util.stream.LongStream;
@@ -16,8 +18,12 @@ public class PrimitiveStream {
 
         // Transformação de tipos
         // mapToInt(), mapToLong(), mapToDouble()
+//        intStream.mapToLong(x -> (long) x);
+        longStream.mapToDouble(x -> (double) x);
+        doubleStream.mapToInt(x -> (int) x);
 
         // Estatisticas de streams
         // summaryStatistics() ==> devolve um consumer para facilitar certas operações
+        System.out.println(intStream.summaryStatistics().getAverage());
     }
 }
