@@ -34,21 +34,29 @@ public class IO {
         // File(File parent, String child) || File(String child, File parent)
         // File(URI uri)
         // ...
-        File arquivoIO = new File("src/main/resources/test.txt");
+        File arquivoIO = new File("src/main/resources/test2.txt");
 
         // Java NIO (Path) -> interface representando o caminho de um arquivo
         // Path.of(String, String...)
         // Path.of(String, String...)
-        // Path.of("src ", "main/", "resources/", "test.txt");
+        // Path.of("src ", "main/", "resources/", "test2.txt");
         // ALTERNATIVA: Paths.get()
-        Path arquivoNIO = Path.of("src/main/resources/test.txt");
+        Path arquivoNIO = Path.of("src/main/resources/test2.txt");
 
         // File <==> Path
         File fromPath = arquivoNIO.toFile();
         Path fromFile = arquivoIO.toPath();
 
         // DESAFIO 1: Imprime se existir (utilizando interface funcional)
-        Path desafio1 = Path.of("src/main/resources/test.txt");
+        Path desafio1 = Path.of("src/main/resources/test2.txt");
+
+        // forma 1
+        if (desafio1.toFile().exists()) System.out.println(desafio1);
+
+        // forma 2
         Stream.of(desafio1.toFile()).filter(File::exists).forEach(System.out::println);
+
+        // forma 3
+        Stream.of(desafio1.toFile()).filter(file -> file.exists()).forEach(file -> System.out.println(file));
     }
 }

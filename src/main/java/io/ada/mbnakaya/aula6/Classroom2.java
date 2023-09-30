@@ -32,36 +32,46 @@ public class Classroom2 {
 
         // OutputStream ==> classe abstrata que trata output em bytes
         // Writer ==> classe abstrata que trata output em caracteres
-//        Reader reader2 = new FileReader("src/main/resources/test.txt");
-//        OutputStream outputStream = new FileOutputStream("src/main/resources/test2.txt");
-//
-//        int indexO;
-//        while ((indexO = reader2.read()) != -1) {
-//            outputStream.write(indexO);
-//        }
-//        reader2.close();
-//        outputStream.write(" COPIADO!!!".getBytes());
-//        outputStream.close();
+        Reader reader2 = new FileReader("src/main/resources/test.txt");
+        OutputStream outputStream = new FileOutputStream("src/main/resources/test2.txt");
+
+        int indexO;
+        while ((indexO = reader2.read()) != -1) {
+            outputStream.write(indexO);
+        }
+        reader2.close();
+        outputStream.write(" COPIADO!!!".getBytes());
+        outputStream.close();
 
         /*
          * DESAFIO: consuma o conteúdo do arquivo test.txt e escreva-o em um novo arquivo writer.txt,
          * utilizando a classe Writer
          */
+        Reader reader3 = new FileReader("src/main/resources/test.txt");
+        Writer writer = new FileWriter("src/main/resources/writer.txt");
+
+        int indexW;
+        while ((indexW = reader3.read()) != -1) {
+            writer.write(indexW);
+        }
+        reader3.close();
+        writer.write(" WRITER COPIADO!!!");
+        writer.close();
 
         // Buffers
-//        Reader reader3 = new FileReader("src/main/resources/gg.txt");
-//        Reader readerToBuffer = new FileReader("src/main/resources/gg.txt");
-//        BufferedReader bReader = new BufferedReader(readerToBuffer);
-//
-//        System.out.println();
-//        compare(reader3, bReader);
-//        System.out.println();
+        Reader reader4 = new FileReader("src/main/resources/gg.txt");
+        Reader readerToBuffer = new FileReader("src/main/resources/gg.txt");
+        BufferedReader bReader = new BufferedReader(readerToBuffer);
+
+        System.out.println();
+        compare(reader4, bReader);
+        System.out.println();
 
         // NIO
-//        String inputNIO = "SEEEEXTOU!!!";
-//        Path nio = Path.of("src/main/resources/nio.txt");
-//        Files.writeString(nio, inputNIO);
-//        Files.readAllLines(nio).forEach(System.out::println);
+        String inputNIO = "SEEEEXTOU!!!";
+        Path nio = Path.of("src/main/resources/nio.txt");
+        Files.writeString(nio, inputNIO);
+        Files.readAllLines(nio).forEach(System.out::println);
     }
 
     private static void compare(Reader reader, BufferedReader bufferedReader) throws IOException {
