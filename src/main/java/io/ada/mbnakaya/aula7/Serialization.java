@@ -15,7 +15,7 @@ public class Serialization {
         // Serialização ==> converter um objeto em memória para uma stream de bytes
 
         // Objeto que será serializado e gravado em arquivo txt
-        Payment payment = new Payment(1L, 0L, 10L, "BRL");
+        Payment payment = new Payment(2L, 0L, 10L, "BRL");
 
         // Declarando de um FileOutputStream
         OutputStream outputStream = new FileOutputStream("src/main/resources/aula7/payment.txt");
@@ -61,13 +61,13 @@ public class Serialization {
         }
     }
 
-    static class Payment {
-//        @Serial
-//        private static final long serialVersionUID = 1L;
+    static class Payment implements Serializable {
+        @Serial
+        private static final long serialVersionUID = 1L;
         private Long id;
         private Long discount;
         private Long total;
-        private String currency;
+        private transient String currency;      // Omitir o atributo da serialização
 
         public Payment(Long id, Long discount, Long total, String currency) {
             this.id = id;

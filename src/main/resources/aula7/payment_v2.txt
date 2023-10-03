@@ -1,0 +1,1 @@
+Payment{id=2, discount=0, total=10, currency='BRL'}
