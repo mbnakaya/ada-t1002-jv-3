@@ -8,7 +8,7 @@ public class Async {
 
         // ExecutorService (> Java 8)
         Runnable runnable = () -> System.out.println("ExecutorService!!");
-        ExecutorService executorService = Executors.newSingleThreadExecutor();
+        ExecutorService executorService = Executors.newSingleThreadExecutor(); // new Thread()
 
         System.out.println("Início");
         executorService.execute(runnable);
@@ -21,7 +21,7 @@ public class Async {
             }
         };
 
-        Future<?> future = executorService.submit(runnable1);
+        Future<?> future = executorService.submit(runnable1);       // Container de objeto (assim como o Optional)
         while (!future.isDone()) {
             System.out.println("Aguardando...");
         }

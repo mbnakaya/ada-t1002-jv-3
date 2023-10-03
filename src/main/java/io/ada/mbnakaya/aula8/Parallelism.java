@@ -7,7 +7,7 @@ public class Parallelism {
     public static void main(String[] args) {
 
         /*
-         * System Thread ==> são threads criadas e gerenciadas pela JVM que executam em background
+         * System Thread ==> são threads criadas e gerenciadas pela JVM, são executadas em background
          * Ex: garbage collector
          */
 
@@ -65,7 +65,7 @@ public class Parallelism {
     // Quando uma thread não consegue completar sua execução por falta de recursos ou por uma dependência nunca satisfeita
 
     // Livelock ==> caso especial de Deadlock
-    // Qaundo duas ou mais treads distribuem locks entre elas, impossibilitando suas conclusões.
+    // Quando duas ou mais treads distribuem locks entre elas, impossibilitando suas conclusões.
 
     // https://www.baeldung.com/jvm-max-threads
 }

@@ -6,11 +6,11 @@ import java.util.concurrent.Executors;
 public class Atomic {
 
     public static void main(String[] args) {
-        final int TASKS = 3;
+        final int THREADS = 3;
         var wallet = new Wallet();
-        ExecutorService service = Executors.newFixedThreadPool(TASKS);
+        ExecutorService service = Executors.newFixedThreadPool(THREADS);
 
-        for (int i = 0; i < TASKS; i++) {
+        for (int i = 0; i < THREADS; i++) {
             service.execute(() -> {
                 wallet.credit(10L);
                 wallet.debit(1L);

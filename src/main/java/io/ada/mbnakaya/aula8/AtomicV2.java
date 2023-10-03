@@ -8,7 +8,7 @@ public class AtomicV2 {
 
     public static void main(String[] args) {
         final int TASKS = 3;
-        var wallet = new Wallet();
+        var wallet = new WalletV2();
         ExecutorService service = Executors.newFixedThreadPool(TASKS);
 
         for (int i = 0; i < TASKS; i++) {
